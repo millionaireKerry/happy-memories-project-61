@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight, Calendar, ProjectorIcon, Heart } from "lucide-react";
@@ -58,6 +58,11 @@ export const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="sr-only">
+            {currentScreenData.title}
+          </DialogTitle>
+        </DialogHeader>
         <Card className="border-0 shadow-none">
           <CardContent className="p-6 text-center space-y-6">
             {/* Icon */}
